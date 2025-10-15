@@ -1,0 +1,18 @@
+[package]
+name = "image-combine"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0.100"
+clap = { version = "4.5.49", features = ["derive"] }
+glob = "0.3.3"
+image = "0.25.8"
+rayon = "1.11.0"
+
+[profile.release]
+opt-level = 3
+debug = false
+strip = "symbols"
+lto = true
+codegen-units = 1
