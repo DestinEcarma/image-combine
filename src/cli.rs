@@ -1,6 +1,9 @@
 use std::path::PathBuf;
 
-use clap::{Parser, ValueEnum};
+use clap::Parser;
+use image::Rgba;
+
+use crate::{colors::parse_rgba, layout::LayoutKind};
 
 #[derive(Parser, Debug)]
 pub struct Cli {
@@ -13,22 +16,14 @@ pub struct Cli {
     pub output: PathBuf,
 
     /// The layout direction of the images
-    #[arg(short, long, default_value = "h")]
-    pub layout: LayoutCli,
+    #[arg(short, long, default_value = "horizontal")]
+    pub layout: LayoutKind,
 
     /// The spacing (pixels) between images
     #[arg(short, long, default_value_t = 0)]
     pub spacing: u32,
 
     /// The background color in hex (#RRGGBB or #RRGGBBAA)
-    #[arg(short, long, default_value = "#ffffff")]
-    pub bg: String,
-}
-
-#[derive(Debug, Clone, Copy, PartialEq, Eq, ValueEnum)]
-pub enum LayoutCli {
-    /// Horizontal layout
-    H,
-    /// Vertical layout
-    V,
+    #[arg(short, long, default_value = "#ffffff", value_parser = parse_rgba)]
+    pub bg: Rgba<u8>,
 }
