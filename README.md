@@ -16,22 +16,19 @@ It can place images side by side or stack them vertically, with optional spacing
 
 ## Installation
 
-### From source
+Install from crates.io:
 
 ```sh
-cargo install --path .
+cargo install image-combine
 ```
 
-### Build manually
+Build from source:
 
 ```sh
+git clone https://github.com/DestinEcarma/image-combine.git
+cd image-combine
 cargo build --release
-```
-
-The compiled binary will be available at:
-
-```sh
-target/release/image-combine
+install -Dm755 target/release/image-combine ~/.local/bin/image-combine
 ```
 
 ## Usage
