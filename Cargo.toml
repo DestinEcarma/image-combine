@@ -8,7 +8,7 @@ authors = ["Destin Ecarma"]
 readme = "README.md"
 homepage = "https://github.com/DestinEcarma/image-combine"
 repository = "https://github.com/DestinEcarma/image-combine"
-keywords = ["cli", "image", "images", "collage", "stitch", "combine", "merge"]
+keywords = ["cli", "image", "collage", "combine", "merge"]
 categories = ["command-line-utilities"]
 
 [dependencies]
